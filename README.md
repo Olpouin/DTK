@@ -22,3 +22,24 @@ Les différentes réponses :
 - 5 = captcha incorrect
 
 ## Afficher les quotes
+`quotes.php` liste toute les quotes dans un joli petit fichier.
+Disposition du json :
+```
+{
+	"id": "<ID de la quote>",
+	"text": "<quote 1>",
+	"type": "<type de la quote>",
+	"source": "<source de la quote>"
+},
+{
+	"id": "<ID de la quote 2>",
+	"text": "<quote 2>"
+	"type": "<type de la quote>",
+	"source": "<source de la quote>"
+},
+{
+	 ...
+}
+```
+Avec `type` qui correspond au type de la quote. Actuellement, il n'y en a qu'un, `quo`.
+Avec `source` qui correspond à la source de la quote (Par exemple : vocal, MP, ...). Inutile pour le moment.
