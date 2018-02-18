@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'opensans-regular';
+    src: url('../content/OpenSans-Regular.ttf');
+}
+
+html {
+	font-family: opensans-regular, sans-serif;
+	background-color: #EEEEEE;
+}
+body {
+	margin: 0;
+}
+
+section {
+	padding: 20px;
+}
