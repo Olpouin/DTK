@@ -25,11 +25,11 @@ if(!isset($text)) {
 	$answer = 5;
 } else{
 	$answer = 0;
-	$req = $bdd->prepare('INSERT INTO DTK(text) VALUES(:text)');
-	$req->execute(array(
-		'text' => $text
-		)
-	);
+	//$req = $bdd->prepare('INSERT INTO DTK(text) VALUES(:text)');
+	//$req->execute(array(
+	//	'text' => $text
+	//	)
+	//);
 }
 
 $result = array("answer"=>$answer, "text"=>$text, "text_chars"=>strlen($text), "captcha"=>$captcha);
