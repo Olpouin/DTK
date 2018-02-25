@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Dans Ton Kévain - Ajouter</title>
+		<meta name="description" content="Dans Ton Kévain, la compilation des meilleurs moments de la République Kévain !">
+		<meta name="author" content="Gouvernement Kévain">
+		<meta property="og:title" content="Ajouter une quote - Dans Ton Kévain">
+		<meta property="og:site_name" content="Dans Ton Kévain">
+		<meta property="og:description" content="Ajoutez une nouvelle quote sur Dans Ton Kévain, la compilation des meilleurs moments de la république Kévain !">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://olpouin.codebrew.fr/DTK/add.html">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/section-add.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/header.css" type="text/css" media="screen"/>
+		<link rel="stylesheet" href="css/main.css" type="text/css" media="screen"/>
+	</head>
+	<body>
+		<header>
+			<img src="content/logo.png">
+			<h1 class="header-large-text">Dans Ton Kévain</h1><h1 class="header-small-text">DTK</h1>
+		</header>
+		<section class="section-add">
+			Avant de compléter ce champ, merci de respecter les règles suivantes :
+			<ol>
+				<li>Ne mettez pas l'heure dans les quotes, sauf si nécessaire à la compréhension.</li>
+				<li>Mettez le texte sous le format "Pseudo : message".</li>
+				<li>Le texte ne doit pas être trop long (Supérieur à 2000 caractères)</li>
+				<li>Le texte ne doit pas être trop court (Inférieur à 10 caractères)</li>
+				<li>Remplissez le captcha</li>
+				<li>Vous pouvez utiliser "/*Commentaire ici*/" pour ajouter des commentaires.</li>
+			</ol>
+			<textarea name="text" placeholder="Olpouin: Le texte de votre quote ici."></textarea>
+			Source de la quote :
+			<select name="type">
+				<option value="0">Sur un serveur/un groupe</option>
+				<option value="1">Par message privé</option>
+				<option value="2">En vocal</option>
+			</select><br>
+			<input name="captcha" placeholder="Captcha" required="" type="text"><br>
+			<input type="submit">
+		</section>
+	</body>
+</html>
