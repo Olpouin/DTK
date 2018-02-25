@@ -2,8 +2,9 @@
 header('Content-Type: application/json');
 header("Access-Control-Allow-Origin: *");
 
-$user = "olpouin";
-$pass = "password here";
+$json = json_decode(file_get_contents("/home/www/codebrew.fr/olpouin/DTK/config.cfg"));
+$user = $json->user;
+$pass = $json->pass;
 try {
 	$bdd = new PDO('mysql:host=localhost;dbname=olpouin;charset=utf8',$user,$pass);
 } catch (Exception $e) {
