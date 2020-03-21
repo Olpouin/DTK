@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteRule ^/?$ index.php
+RewriteRule ^quotes/name/(.*)/(.*)? index.php?type=quotes&sort=name&param=$1&page=$2
+RewriteRule ^quotes/(.*)/(.*)? index.php?type=quotes&sort=$1&page=$2
+RewriteRule ^share/(.*)/? index.php?type=share&id=$1
+RewriteRule ^add/ index.php?type=add
