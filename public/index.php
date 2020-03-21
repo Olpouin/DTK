@@ -57,21 +57,14 @@ if (isset($_GET['type'])) {
 			<fieldset class="search-menu" id="search-menu">
 				<legend>Paramètres de recherche</legend>
 				<div>
-					Trier par date de publication :
+					Type de triage :
 					<ul>
-						<li><a href="<?=Config::read('gene.path')?>/quotes/latest/">Dernières quotes</a></li>
-						<li><a href="<?=Config::read('gene.path')?>/quotes/former/">Premières quotes</a></li>
+						<li><a href="<?=Config::read('gene.path')?>/quotes/latest/">Par date de publication</a></li>
+						<li><a href="<?=Config::read('gene.path')?>/quotes/date/">Par date du texte</a></li>
 					</ul>
-					Trier par date des quotes :
-					<ul>
-						<li><a href="<?=Config::read('gene.path')?>/quotes/new/">Plus récentes</a></li>
-						<li><a href="<?=Config::read('gene.path')?>/quotes/old/">Plus vieilles</a></li>
-					</ul>
-				</div>
-				<div>
 					Trier par provenance :
 					<ul>
-						<li><a href="<?=Config::read('gene.path')?>/quotes/voice/">Quotes par chat vocale</a></li>
+						<li><a href="<?=Config::read('gene.path')?>/quotes/voice/">Quotes par chat vocal</a></li>
 						<li><a href="<?=Config::read('gene.path')?>/quotes/text/">Quotes textuelles</a></li>
 					</ul>
 				</div>

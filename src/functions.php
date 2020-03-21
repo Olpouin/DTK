@@ -41,7 +41,8 @@ class Quote {
 		$text = preg_replace('/^&lt;(.*)&gt;/Um', '<span class="t-u">$0</span>', $text); // Username -> Light blue
 		$text = preg_replace('/\/\*(.*)\*\//Us', '<span class="t-d">$1</span>', $text); // Desciption -> Dark blue
 
-		$date = date("d/m/Y", strtotime($this->_date));
+		if ($this->_date == NULL) $date = "Date inconnue";
+		else $date = date("d/m/Y", strtotime($this->_date));
 
 		$quote = "<div class='quote' id='{$this->_id}'><div class='quote-h'><span>#{$this->_id} | <span>{$date}</span></span>{$icons}</div><pre>{$text}</pre></div>";
 		return $quote;
