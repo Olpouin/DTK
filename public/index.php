@@ -22,8 +22,6 @@ if (isset($_GET['type'])) {
 	}
 } else require_once("../src/pages/home.php");
 
-//Accueil
-//Parce que la boutade n'attend pas.
 ?>
 <!DOCTYPE html>
 <html lang="<?=Config::read('gene.path')?>">
@@ -37,7 +35,8 @@ if (isset($_GET['type'])) {
 		<link rel="stylesheet" href="<?=Config::read('gene.path')?>/content/css/quotes.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="<?=Config::read('gene.path')?>/content/css/main.css" type="text/css" media="screen"/>
 		<link rel="stylesheet" href="<?=Config::read('gene.path')?>/content/css/add.css" type="text/css" media="screen"/>
-		<script src="<?=Config::read('gene.path')?>/content/js/script.js" defer="defer"></script>
+		<link rel="stylesheet" href="<?=Config::read('gene.path')?>/content/themes/<?=Config::read('cookie.theme')?>.css" type="text/css" media="screen"/>
+		<script src="<?=Config::read('gene.path')?>/content/js/script.js"></script>
 		<script src="<?=Config::read('gene.path')?>/content/js/functions.js"></script>
 	</head>
 	<body>
@@ -81,8 +80,5 @@ if (isset($_GET['type'])) {
 			</fieldset>
 			<?=$content['page']?>
 		</div>
-		<footer>
-
-		</footer>
 	</body>
 </html>

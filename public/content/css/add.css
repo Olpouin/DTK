@@ -27,7 +27,7 @@ input[type=password]:focus, input[type=date]:focus, select, .section-add textare
 	border: 2px solid var(--color_main);
 	transition: border 200ms linear 0s;
 }
-.section-add input[type=submit], button, .search-menu ul {
+.section-add input[type=submit], button, .search-menu ul, .parameters ul {
 	color: var(--text-color_buttons);
 	cursor: pointer;
 	border: 2px solid #DCDCDC;
@@ -37,8 +37,8 @@ input[type=password]:focus, input[type=date]:focus, select, .section-add textare
 	padding: 15px 20px;
 	transition: color 200ms,background-color 200ms,border 200ms;
 }
-.section-add input[type=submit]:hover, button:hover, .search-menu ul a:hover {
-	color: var(--background-color_secondary);
+.section-add input[type=submit]:hover, button:hover, .search-menu ul a:hover, .parameters ul a:hover, .selected {
+	color: var(--text-color_secondary);
 	background-color: var(--color_main);
 	border: 2px solid var(--color_main);
 	transition: color 200ms,background-color 200ms,border 200ms

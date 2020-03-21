@@ -44,6 +44,14 @@ class Core {
 $core = Core::getInstance();
 require_once('functions.php');
 
+//Cookie handler
+if (!isset($_COOKIE['theme'])) Config::write('cookie.theme', 'day');
+else {
+	if (!in_array($_COOKIE['theme'], Config::read('gene.themes'))) Config::write('cookie.theme', 'day');
+	else Config::write('cookie.theme', $_COOKIE['theme']);
+}
+
+
 $content['page'] = "";
 $content['title'] = "";
 $content['desc'] = "";

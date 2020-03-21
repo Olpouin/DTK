@@ -1,0 +1,11 @@
+:root {
+	--color_main: #003399;
+	--background-color_main: #2F2F2F;
+	--background-color_secondary: #1F1F1F;
+	--text-color_main: #FFFFFF;
+	--text-color_secondary: #FFFFFF;
+	--text-color_buttons: #D2D2D2;
+	--text-color_usernames: #2255BB;
+	--text-color_comments: #0063CC;
+	--header_image: url('../header-night.jpg');
+}

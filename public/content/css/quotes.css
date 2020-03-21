@@ -27,6 +27,7 @@
 	position: relative;
 	right: 10px;
 	float: right;
+	user-select: none;
 }
 .usable-icon {
 	cursor: pointer;
@@ -69,4 +70,5 @@
 	height: auto;
 	margin: 15px auto;
 	clear: both;
+	user-select: none;
 }

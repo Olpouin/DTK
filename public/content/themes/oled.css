@@ -1,0 +1,11 @@
+:root {
+	--color_main: #001177;
+	--background-color_main: #000000;
+	--background-color_secondary: #090909;
+	--text-color_main: #DDDDDD;
+	--text-color_secondary: #DDDDDD;
+	--text-color_buttons: #DDDDDD;
+	--text-color_usernames: #3295FF;
+	--text-color_comments: #0063CC;
+	--header_image: url('../header-galaxy.jpg');
+}

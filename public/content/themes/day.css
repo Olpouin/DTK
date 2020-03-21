@@ -1,0 +1,11 @@
+:root {
+	--color_main: #3295FF;
+	--background-color_main: #EEEEEE;
+	--background-color_secondary: #FFFFFF;
+	--text-color_main: #000000;
+	--text-color_secondary: #FFFFFF;
+	--text-color_buttons: #4D4D4D;
+	--text-color_usernames: #3295FF;
+	--text-color_comments: #0063CC;
+	--header_image: url('../header.jpg');
+}

@@ -40,8 +40,8 @@ $start = ($page * 60) - 60;
 $wantedQuotes = array_slice($quotes, $start, 60);
 
 $nav = "<div class=\"nav-menu\">";
-if ($pagePrevious > 0) $nav .= "<a href=\"1\" class=\"nav-button\" style=\"float:left;margin-right:10px;\">❮❮</a><a href=\"".$pagePrevious."\" class=\"nav-button\" style=\"float:left\">❮ Page ".$pagePrevious."</a>";
-if ($pageNext <= $pagesTotal) $nav .= "<a href=\"".$pagesTotal."\" class=\"nav-button\" style=\"float:right;margin-left:10px;\">❯❯</a><a href=\"".$pageNext."\" class=\"nav-button\" style=\"float:right;\">Page ".$pageNext." ❯</a>";
+if ($pagePrevious > 0) $nav .= "<a href=\"1\" class=\"nav-button\" style=\"float:left;margin-right:10px;\">❮❮</a><a href=\"".$pagePrevious."\" class=\"nav-button\" rel=\"prev\" style=\"float:left\">❮ Page ".$pagePrevious."</a>";
+if ($pageNext <= $pagesTotal) $nav .= "<a href=\"".$pagesTotal."\" class=\"nav-button\" rel=\"next\" style=\"float:right;margin-left:10px;\">❯❯</a><a href=\"".$pageNext."\" class=\"nav-button\" style=\"float:right;\">Page ".$pageNext." ❯</a>";
 $nav .= "</div>";
 
 $quotesHTML = "<h2 style=\"text-align:center;margin:0\">".$content['title']."</h2><div class=\"quotes\" id=\"quo\">";
