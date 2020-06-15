@@ -46,7 +46,8 @@ $nav .= "</div>";
 
 $quotesHTML = "<h2 style=\"text-align:center;margin:0\">".$content['title']."</h2><div class=\"quotes\" id=\"quo\">";
 foreach ($wantedQuotes as $wantedQuote) {
-	$quoteObject = new Quote($wantedQuote);
+	$quoteObject = new Quote();
+	$quoteObject->load($wantedQuote);
 	$quotesHTML .= $quoteObject->toHTML();
 }
 $quotesHTML .= "</div>";

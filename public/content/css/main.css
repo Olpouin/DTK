@@ -7,6 +7,9 @@ body {
 	margin: 0 !important;
 	min-height: 100vh;
 }
+.wait {
+	cursor: progress !important;
+}
 @font-face {
 	font-family: 'opensans-regular';
 	src: url('../OpenSans-Regular.ttf');
@@ -30,15 +33,9 @@ a {
 	position: fixed;
 	height: 0;
 	top: 0;
-	resize: none;
+	width: 0;
 	border: none;
-	width: 20vw;
-	left: 40vw;
-	text-align: center;
-}
-.share-url:focus {
-	height: auto !important;
-	padding-top: 15px;
+	resize: none;
 }
 /*search menu*/
 .search-menu {
@@ -138,6 +135,88 @@ header > div > a:hover, header .menu-open {
 	background-color: var(--color_main);
 	transition: color,background-color .2s linear;
 }
+
+
+.notifs-box {
+	position: fixed;
+	z-index: 10;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 0;
+	margin-bottom: 15px;
+}
+.notif {
+	position: relative;
+	display: inline-block;
+	background-color: var(--background-color_secondary);
+	padding: 8px 16px;
+	margin: 0 10px;
+	padding-right: 40px;
+	border-radius: 5px;
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+	text-align: left;
+}
+.notif > b {
+	display: block;
+}
+.notif > span {
+	vertical-align: middle;
+}
+.notif > button {
+	color: var(--color_main);
+	text-transform: uppercase;
+	font-weight: bold;
+	background-color: inherit;
+	border: none;
+	cursor: pointer;
+	padding: 8px;
+	margin: 0 8px;
+	border-radius: 5px;
+	vertical-align: middle;
+}
+.notif > button:hover {
+	background-color: var(--background-color_main);
+}
+.notif > svg {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	border-radius: 100%;
+	cursor: pointer;
+	padding: 6px;
+	vertical-align: middle;
+}
+.notif > svg > .svg-color {
+	fill: var(--text-color_main);
+}
+.notif > svg:hover {
+	background-color: var(--background-color_main);
+}
+.notif > div {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 4px;
+	animation-name: autodelete-bar;
+	animation-timing-function: linear;
+	background-color: var(--color_main);
+}
+@keyframes autodelete-bar {
+	from {
+		width: 100%;
+		border-radius: 0 0 5px 5px;
+	}
+	5% {
+		border-radius: 0 0 0 5px;
+	}
+	to {
+		width: 0%;
+		border-radius: 0 0 0 5px;
+	}
+}
+
 /*Sections*/
 body > div {
 	padding: 15px;
@@ -150,10 +229,13 @@ body > div {
 	}
 }
 
-@media only all and (max-width: 800px) {
-    .quote {
-        width: calc(33% - 30px) !important;
-    }
+@media only all and (max-width: 800px) { /*Phones*/
+	.quote {
+		width: calc(100% - 30px) !important;
+	}
+	.section-add {
+		margin: 0 !important;
+	}
 }
 @media only all and (max-width: 450px) {
 	header h1.min {
@@ -162,8 +244,4 @@ body > div {
 	header h1.def {
 		display: none;
 	}
-
-    .quote {
-       width: calc(100% - 30px) !important;
-    }
 }

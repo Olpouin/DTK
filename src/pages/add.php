@@ -4,30 +4,45 @@ $content['title'] = 'Ajouter une quote';
 $date = date("Y-m-d");
 $path = Config::read('gene.path');
 $content['page'] = <<<ADD
-<div id="section-add" class="section-add">
-	Avant de compléter ce champ, merci de respecter les règles suivantes :
-	<li>Ne postez pas juste pour poster : Envoyez seulement les conversations drôles que vous voyez. Certains contenus ont plus leur place dans le Starboard que sur DTK, comme par exemple « (Oui j'ai dabbé :( ) ».</li>
-	<li>Ne mettez pas l'heure.</li>
-	<li>Mettez le texte sous le format « &lt;Pseudo&gt; message ».</li>
-	<li>Pour ajouter un commentaire si nécéssaire, vous pouvez utiliser /*Commentaire*/ dans la quote.</li>
-	<li>10 caractères ≥ quote ≥ 2000 caractères</li>
+<div class="add-panel">
+	<div class="add-panel_main">
+		<div class="add-panel_quote">
+			<textarea id="add_text" name="text" required="" placeholder="/*Exemple de commentaire*/\r\n<Pseudo> Exemple de texte.\n<Olpouin> Exemple de texte !"></textarea>
+			<input id="add_date" name="date" type="date" value="{$date}">
+			<label class="checkbox-label" for="add_voice"><input id="add_voice" name="voice" type="checkbox">Vocal <span></span></label>
+			<label class="checkbox-label" for="add_RP"><input id="add_RP" name="rp" type="checkbox">RP <span></span></label>
+			<br><br><input id="add_pass" name="pass" placeholder="Mot de passe" required="" type="password">
+			<button class="button" onclick="API('add-quotes',{
+				'text':document.getElementById('add_text').value,
+				'date':document.getElementById('add_date').value,
+				'source':isChecked('add_voice'),
+				'subject':isChecked('add_RP'),
+				'pass':document.getElementById('add_pass').value
+			})">Envoyer</button>
+		</div>
+		<div class="add-panel_preview">
+			<div class='quote'>
+				<div class='quote-h'>
+					<span>#0 | 2 lof</span>
+					<img class="quote-icon usable-icon" onclick="share(&quot;/add/&quot;);" src="/content/icons/share.svg" alt="Icône partage" title="Partager">
+					<img class="quote-icon" src="/content/icons/voice.svg" alt="Icône chat vocal" title="Chat vocal">
+					<img class="quote-icon" src="/content/icons/RP.svg" alt="Icône RP" title="En rapport avec un RP">
+				</div>
+				<pre>Texte !</pre>
+			</div>
+		</div>
+	</div>
 
-	<form action="{$path}/api/add-quotes.php" method="post">
-		Quote : <textarea id="add_text" name="text" required="" placeholder="/*Exemple de commentaire*/\r\n<Olpouin> Exemple de texte."></textarea>
-		Mot de passe : <input name="pass" placeholder="Mot de passe requis pour ajouter une quote." required="" type="password">
-		Date : <input id="add_date" name="date" type="date" value="{$date}">
-		A cocher si la quote vient d'en vocal : <input id="add_source-type" name="source-type" type="checkbox"><br>
-		<input type="submit" value="Envoyer ma quote !">
-		<button type="button" style="float:right;" onclick="formatQuote();">Preview</button>
-	</form>
+	<div class="add-panel_rules">
+		<h2>Envoyer une quote</h2>
+		<ol>
+			<li>Ne postez pas juste pour poster</li>
+			<li>Ne mettez pas l'heure</li>
+			<li>Respectez le format</li>
+			<li>Ajoutez un commentaire si nécéssaire.</li>
+			<li>Maximum de 2000 caractères</li>
+		</ol>
+	</div>
 </div>
-<div class="section-add_preview">
-	<h1 style="margin-bottom: 0;">Preview :</h1>
-	<span>Appuyez sur le bouton "Preview" avant d'envoyer la quote pour voir facilement à quoi elle ressemblera.</span>
-	<div class="section-add_preview-box" id="previewBox"></div>
-</div>
-<script>
-	formatQuote();
-</script>
 ADD;
 ?>

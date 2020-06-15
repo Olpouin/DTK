@@ -12,15 +12,9 @@ class Config {
 		if (!is_array(self::$confArray[$name])) return false;
 		array_push(self::$confArray[$name], $value);
 	}
-
-	public static function checkPassword($pass) {
-		foreach (Config::read('gene.password') as $key) {
-			if (password_verify($pass, $key)) return true;
-		} return false;
-	}
 }
-require_once('../config/database.php');
-require_once('../config/general.php');
+require_once('config/database.php');
+require_once('config/general.php');
 class Core {
 	public $db;
 	private static $instance;
@@ -42,7 +36,7 @@ class Core {
 	}
 }
 $core = Core::getInstance();
-require_once('functions.php');
+require_once('src/functions.php');
 
 //Cookie handler
 if (!isset($_COOKIE['theme'])) Config::write('cookie.theme', 'day');

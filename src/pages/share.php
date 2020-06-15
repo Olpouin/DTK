@@ -10,7 +10,8 @@ $quotePrepare = $core->db->prepare("SELECT * FROM `DTK` WHERE id = ".$_GET['id']
 $quotePrepare->execute();
 $quoteArray = $quotePrepare->fetch();
 
-$quote = new Quote($quoteArray);
+$quote = new Quote();
+$quote->load($quoteArray);
 
 $previous = (!is_null($quote->quoteNear('previous'))) ? "<a href='".$quote->quoteNear('previous')."' class='nav-button_search'>❮</a>" : "";
 $quoteHTML = $quote->toHTML();

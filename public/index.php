@@ -1,5 +1,5 @@
 <?php
-require_once("../src/main.php");
+require_once("../main.php");
 
 $buttonQuotes = $buttonAdd = $buttonSpecial = "";
 if (isset($_GET['type'])) {
@@ -80,5 +80,6 @@ if (isset($_GET['type'])) {
 			</fieldset>
 			<?=$content['page']?>
 		</div>
+		<div id="notifs" class="notifs-box"></div>
 	</body>
 </html>

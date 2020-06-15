@@ -21,5 +21,6 @@ $content['page'] = <<<PAGE
 		} else select('theme-day');
 	</script>
 </fieldset>
+<div>Icon : <a href="https://www.flaticon.com/authors/freepik" target="_blank" title="Freepik">Freepik</a></div>
 PAGE;
 ?>

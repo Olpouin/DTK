@@ -1,53 +1,88 @@
+.add-panel {
+	display: flex;
+	margin: 0 20%;
+}
+.add-panel_quote, .add-panel_rules {
+	border-radius: 5px;
+	background-color: var(--background-color_secondary);
+	margin: 20px;
+	padding: 15px;
+}
+.add-panel_main {
+	flex: 3;
+}
+.add-panel_preview {
+	text-align: center;
+	margin: 30px;
+}
+.add-panel_preview > div {
+	width: 100% !important
+}
+.add-panel_quote > textarea {
+	width: 100%;
+	height: 80px;
+	max-height: 200px;
+	resize: vertical;
+}
+.add-panel_rules {
+	flex: 1;
+}
+.add-panel_rules > h2 {
+	margin: 0;
+	margin-bottom: 5px;
+}
+.add-panel_rules > ol {
+	margin: 0;
+	padding: 0;
+	list-style-position: inside
+}
+.add-panel_rules > ol > li {
+	border-top: solid 1px var(--text-color_secondary);
+	padding: 5px 0;
+}
+
 .section-add {
-	width: 40%;
-	display: inline-block;
+	display: block;
+	margin: 0 25%;
 	background-color: var(--background-color_secondary);
 	border-radius: 5px;
-	padding: 10px;
+	padding: 20px;
 }
 .section-add li {
 	margin-left: 16px;
 }
-.section-add textarea {
-	width: 100%;
-	height: 50px;
-	max-height: 200px;
-	resize: vertical;
-}
-input[type=password], input[type=date], select, .section-add textarea {
+input[type=password], input[type=date], select, .add-panel_quote textarea {
 	width: calc(100% - 30px);
 	color: var(--text-color_main);
 	background-color: var(--background-color_secondary);
 	padding: 10px 15px;
 	border-radius: 5px;
-	border: 2px solid #DCDCDC;
+	margin: 5px 0;
+	border: 1px solid #DCDCDC;
 	transition: border 200ms linear 0s;
 }
-input[type=password]:focus, input[type=date]:focus, select, .section-add textarea:focus   {
-	border: 2px solid var(--color_main);
+input[type=password]:focus, input[type=date]:focus, select, .add-panel_quote textarea:focus   {
+	border: 1px solid var(--color_main);
 	transition: border 200ms linear 0s;
 }
-.section-add input[type=submit], button, .search-menu ul, .parameters ul {
+input[type=submit], .button, .search-menu ul, .parameters ul {
 	color: var(--text-color_buttons);
 	cursor: pointer;
-	border: 2px solid #DCDCDC;
+	border: 1px solid #DCDCDC;
 	text-transform: uppercase;
 	font-weight: 800;
 	background-color: var(--background-color_secondary);
 	padding: 15px 20px;
 	transition: color 200ms,background-color 200ms,border 200ms;
 }
-.section-add input[type=submit]:hover, button:hover, .search-menu ul a:hover, .parameters ul a:hover, .selected {
+input[type=submit]:hover, .button:hover, .search-menu ul a:hover, .parameters ul a:hover, .selected {
 	color: var(--text-color_secondary);
 	background-color: var(--color_main);
-	border: 2px solid var(--color_main);
+	border: 1px solid var(--color_main);
 	transition: color 200ms,background-color 200ms,border 200ms
 }
 
 .section-add_preview {
-	width: calc(60% - 20px);
-	float: right;
-	display: inline-block;
 	text-align: center;
 	padding-top: 20px;
 }
@@ -57,4 +92,27 @@ input[type=password]:focus, input[type=date]:focus, select, .section-add textare
 }
 .section-add_preview-box {
 	width: 100%;
+}
+.checkbox-label {
+	display: inline-block;
+	color: var(--text-color_buttons);
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 500;
+	background-color: var(--background-color_secondary);
+	padding: 5px 10px;
+}
+.checkbox-label:hover {
+	color: var(--color_main);
+}
+.checkbox-label input {
+	display: none;
+}
+.checkbox-label span::before {
+	content: "✘";
+	color: red;
+}
+input:checked ~ span::before {
+	content: "✔";
+	color: green;
 }
