@@ -26,6 +26,26 @@ function isChecked(id) {
 	else return "false";
 }
 
+function previewQuote(type="txt") {
+	switch (type) {
+		case 'icon': {
+			if (document.getElementById("add_voice").checked) document.getElementById("preview_voice").setAttribute("style", "");
+			else document.getElementById("preview_voice").setAttribute("style", "display:none;");
+			if (document.getElementById("add_RP").checked) document.getElementById("preview_RP").setAttribute("style", "");
+			else document.getElementById("preview_RP").setAttribute("style", "display:none;");
+			break;
+		}
+		case 'date': {
+			let dateFormatted = new Date(document.getElementById('add_date').value);
+			document.getElementById("preview_date").textContent = dateFormatted.getDate()+"/"+(dateFormatted.getMonth()+1)+"/"+dateFormatted.getFullYear();
+			break;
+		}
+		default: {
+			document.getElementById("preview_text").textContent = document.getElementById('add_text').value;
+			break;
+		}
+	}
+}
 /*function formatQuote(text,date,sourcetype) {
 	var text = document.getElementById("add_text").value.replace(/\n/g, "%0D%0A");
 	console.log({text});
