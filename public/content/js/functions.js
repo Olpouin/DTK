@@ -26,6 +26,16 @@ function isChecked(id) {
 	else return "false";
 }
 
+function escapeHtml(text) {
+	var map = {
+		'&': '&amp;',
+		'<': '&lt;',
+		'>': '&gt;',
+		'"': '&quot;',
+		"'": '&#039;'
+	};
+	return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+}
 function previewQuote(type="txt") {
 	switch (type) {
 		case 'icon': {
@@ -41,7 +51,9 @@ function previewQuote(type="txt") {
 			break;
 		}
 		default: {
-			document.getElementById("preview_text").textContent = document.getElementById('add_text').value;
+			document.getElementById("preview_text").innerHTML = escapeHtml(document.getElementById('add_text').value)
+				.replaceAll(/^&lt;(.*)&gt;/gm,"<span class=\"t-u\">&lt;$1&gt;</span>") //Username
+				.replaceAll(/\/\*(.*)\*\//gm,"<span class=\"t-d\">$1</span>"); //Desc
 			break;
 		}
 	}
