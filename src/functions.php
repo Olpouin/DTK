@@ -142,6 +142,15 @@ class Quote {
 		$quote = "<div class='quote' id='{$this->_id}'><div class='quote-h'><span>#{$this->_id} | <span>{$date}</span></span>{$icons}</div><pre>{$text}</pre></div>";
 		return $quote;
 	}
+	public function toJSON() {
+		return json_encode([
+			"id" => $this->_id,
+			"text" => $this->_text,
+			"date" => $this->_date,
+			"source" => $this->_source,
+			"subject" => $this->_subject
+		]);
+	}
 }
 
 function APIresponse($title, $msg) {
